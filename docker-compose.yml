@@ -1,0 +1,9 @@
+version: '2.0' # version syntax
+services: # Here we define our service(s)
+    angular-service: # The name of the service
+      container_name: angularcontainer  # Container name
+      image: 
+      ports: 
+        - '8080:80' # Port mapping
+      environment:
+        - "ENVIRONMENT=${ENVIRONMENT}"
