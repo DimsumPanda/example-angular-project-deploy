@@ -83,7 +83,7 @@ resource "aws_elb" "example" {
   }
 }
 resource "aws_security_group" "elb" {
-  name = "${substr(var.image_name,0,10)}-${var.image_tag}"
+  name = "${substr(var.image_name,0,10)}-${var.image_tag}-elb"
   # Allow all outbound
   egress {
     from_port   = 0
