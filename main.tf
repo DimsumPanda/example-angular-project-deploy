@@ -62,7 +62,7 @@ resource "aws_autoscaling_group" "example" {
 }
 
 resource "aws_elb" "example" {
-  name               = var.application_name
+  name               = "${substr(var.application_name,0,10)}-${var.application_version}"
   availability_zones = data.aws_availability_zones.all.names
   security_groups    = [aws_security_group.elb.id]
 

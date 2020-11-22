@@ -13,3 +13,8 @@ variable "application_name" {
   type        = string
   description = "name will be used for the resource names"
 }
+variable "application_version" {
+  default     = "1-0-0"
+  type        = string
+  description = "name will be used for the resource names"
+}
