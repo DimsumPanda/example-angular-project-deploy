@@ -2,6 +2,6 @@ version: '2.0' # version syntax
 services: # Here we define our service(s)
     angular-service: # The name of the service
       container_name: angularcontainer  # Container name
-      image: thedimsumpanda/example-angular-project-dev:add-deploy
+      image: ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}
       ports: 
         - '8080:80' # Port mapping

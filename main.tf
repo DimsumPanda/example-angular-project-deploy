@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "instance" {
-  name          = "${substr(var.application_name,0,10)}-${var.application_version}"
+  name          = "${substr(var.image_name,0,10)}-${var.image_tag}"
   ingress {
     from_port   = var.server_port
     to_port     = var.server_port
@@ -56,13 +56,13 @@ resource "aws_autoscaling_group" "example" {
 
   tag {
     key                 = "Name"
-    value               = "${substr(var.application_name,0,10)}-${var.application_version}"
+    value               = "${substr(var.image_name,0,10)}-${var.image_tag}"
     propagate_at_launch = true
   }
 }
 
 resource "aws_elb" "example" {
-  name               = "${substr(var.application_name,0,10)}-${var.application_version}"
+  name               = "${substr(var.image_name,0,10)}-${var.image_tag}"
   availability_zones = data.aws_availability_zones.all.names
   security_groups    = [aws_security_group.elb.id]
 
@@ -83,7 +83,7 @@ resource "aws_elb" "example" {
   }
 }
 resource "aws_security_group" "elb" {
-  name = "${substr(var.application_name,0,10)}-${var.application_version}"
+  name = "${substr(var.image_name,0,10)}-${var.image_tag}"
   # Allow all outbound
   egress {
     from_port   = 0

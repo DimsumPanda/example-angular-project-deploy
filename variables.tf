@@ -8,13 +8,18 @@ variable "server_port" {
   type        = number
   description = "The port the server will use for HTTP requests"
 }
-variable "application_name" {
+variable "image_name" {
   default     = "example"
   type        = string
-  description = "name will be used for the resource names"
+  description = "name will be used for the resource names and docker-compose"
 }
-variable "application_version" {
+variable "image_tag" {
   default     = "1-0-0"
   type        = string
-  description = "name will be used for the resource names"
+  description = "name will be used for the resource names and docker-compose"
+}
+variable "image_registry" {
+  default     = ""
+  type        = string
+  description = "Will be used for docker-compose"
 }
