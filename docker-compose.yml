@@ -5,5 +5,3 @@ services: # Here we define our service(s)
       image: thedimsumpanda/example-angular-project-dev:add-deploy
       ports: 
         - '8080:80' # Port mapping
-      environment:
-        - "ENVIRONMENT=${ENVIRONMENT}"
