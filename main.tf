@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "instance" {
-  name          = var.application_name
+  name          = "${substr(var.application_name,0,10)}-${var.application_version}"
   ingress {
     from_port   = var.server_port
     to_port     = var.server_port
@@ -56,7 +56,7 @@ resource "aws_autoscaling_group" "example" {
 
   tag {
     key                 = "Name"
-    value               = var.application_name
+    value               = "${substr(var.application_name,0,10)}-${var.application_version}"
     propagate_at_launch = true
   }
 }
@@ -83,7 +83,7 @@ resource "aws_elb" "example" {
   }
 }
 resource "aws_security_group" "elb" {
-  name = var.application_name
+  name = "${substr(var.application_name,0,10)}-${var.application_version}"
   # Allow all outbound
   egress {
     from_port   = 0
