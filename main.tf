@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
+  name          = var.application_name
   ingress {
     from_port   = var.server_port
     to_port     = var.server_port
@@ -24,10 +24,10 @@ resource "aws_security_group" "instance" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
@@ -56,13 +56,13 @@ resource "aws_autoscaling_group" "example" {
 
   tag {
     key                 = "Name"
-    value               = "terraform-asg-example"
+    value               = var.application_name
     propagate_at_launch = true
   }
 }
 
 resource "aws_elb" "example" {
-  name               = "terraform-asg-example"
+  name               = var.application_name
   availability_zones = data.aws_availability_zones.all.names
   security_groups    = [aws_security_group.elb.id]
 
@@ -83,7 +83,7 @@ resource "aws_elb" "example" {
   }
 }
 resource "aws_security_group" "elb" {
-  name = "terraform-example-elb"
+  name = var.application_name
   # Allow all outbound
   egress {
     from_port   = 0

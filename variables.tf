@@ -8,3 +8,8 @@ variable "server_port" {
   type        = number
   description = "The port the server will use for HTTP requests"
 }
+variable "application_name" {
+  default     = "example"
+  type        = string
+  description = "name will be used for the resource names"
+}
