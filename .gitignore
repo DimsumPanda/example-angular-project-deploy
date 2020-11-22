@@ -1,0 +1,17 @@
+# Local .terraform directories
+**/.terraform/*
+.terraform
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# crash log files
+crash.log
+
+#ignore .out files
+*.out
+
+# local overrides
+*override.tf
+*override.tf**
+
