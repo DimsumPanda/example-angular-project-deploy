@@ -2,7 +2,6 @@ terraform {
   backend "s3" {
     bucket = "tfstatefiles-jajfugusrrtlyqvf"
     region = "us-east-2"
-    key = "global/s3/test.tf"
   }
 }
 
