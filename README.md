@@ -4,7 +4,7 @@
 3. [Example Angular Project - Build with Jenkinsfile](https://github.com/DimsumPanda/example-angular-project-build)
 
 ## Terraform
-I'm using terraform v0.12.29 for this project
+I'm using terraform v0.12.29 for this project.
 This repo holds the terraform and docker-compose file to spin up a docker application in an AWS auto-scaling group (ASG) with scalable EC2 instances using Terraform (infrastructure as code).
 
 1. Please take a look at main.tf and update the s3 bucket and region information for the tfstate file storage.
