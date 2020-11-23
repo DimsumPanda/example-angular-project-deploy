@@ -1,5 +1,5 @@
 # example-angular-project-deploy
-I'm using terraform v0.12.29 for this project
+I'm using terraform v0.12.29 for this project.
 This repo holds the terraform and docker-compose file to spin up a docker application in an AWS auto-scaling group (ASG) with scalable EC2 instances using Terraform (infrastructure as code).
 
 **variables.tf** - variables used within main.tf and cloud_init.tf
