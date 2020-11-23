@@ -7,9 +7,10 @@
 I'm using terraform v0.12.29 for this project.
 This repo holds the terraform and docker-compose file to spin up a docker application in an AWS auto-scaling group (ASG) with scalable EC2 instances using Terraform (infrastructure as code).
 
-1. Please take a look at main.tf and update the s3 bucket and region information for the tfstate file storage.
-2. Also review variables.tf, you can replace the sshkey_name's default value with a key-pair that you may have generated on AWS.
-3. After reviewing the details, please proceed to the [build example](https://github.com/DimsumPanda/example-angular-project-build).
+1. Fork or clone this repo to modify.
+2. Please take a look at main.tf and update the s3 bucket and region information for the tfstate file storage.
+3. Also review variables.tf, you can replace the sshkey_name's default value with a key-pair that you may have generated on AWS.
+4. After reviewing the details, please proceed to the [build example](https://github.com/DimsumPanda/example-angular-project-build).
 
 ## File Details
 
